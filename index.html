@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obsidian Dice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✦</span><span>OBSIDIAN DICE</span></div>
+        <div class="status" aria-label="게임 상태">
+          <div><span>HP</span><strong id="hp">18</strong><i class="hp-bar"><b id="hpFill"></b></i></div>
+          <div><span>FATE</span><strong id="fate">3</strong></div>
+          <div><span>GOLD</span><strong id="gold">24</strong></div>
+        </div>
+      </header>
+
+      <section class="game-grid">
+        <aside class="panel journal-panel">
+          <p class="eyebrow">THE VEILED PATH</p>
+          <h1>Whispers<br /><em>Below</em></h1>
+          <div class="enemy-card">
+            <div class="enemy-sigil">☾</div>
+            <div><span>CHAMBER I · ENCOUNTER 04</span><h2>The Hollow Warden</h2></div>
+            <div class="enemy-hp"><b id="enemyFill"></b></div>
+            <small><strong id="enemyHp">26</strong> / 26 VITALITY</small>
+          </div>
+          <div class="lore-rule"></div>
+          <p class="flavor">An old sentinel stirs beneath the salt-black stone. Let the dice decide what remains of you.</p>
+          <section class="combat-log" aria-live="polite">
+            <p class="eyebrow">CHRONICLE</p>
+            <ol id="log"><li>The Warden awaits your roll.</li></ol>
+          </section>
+        </aside>
+
+        <section class="board" aria-label="주사위 게임 보드">
+          <div class="rune rune-a">✧</div><div class="rune rune-b">☽</div><div class="rune rune-c">✦</div>
+          <div class="turn-label"><span></span> YOUR TURN <span></span></div>
+          <div class="dice-stage">
+            <button id="dice" class="dice" aria-label="주사위 굴리기"><span id="diceFace">✦</span></button>
+            <div class="dice-shadow"></div>
+          </div>
+          <p id="result" class="result">THE DICE REMEMBERS.</p>
+          <div class="actions">
+            <button id="rollBtn" class="primary">ROLL THE DICE <kbd>SPACE</kbd></button>
+            <button id="rerollBtn" class="secondary">BEND FATE <span>−1</span></button>
+          </div>
+          <p class="reroll-note">Spend 1 Fate to reroll your last omen.</p>
+        </section>
+
+        <aside class="panel faces-panel">
+          <div class="panel-heading"><div><p class="eyebrow">YOUR RELIC</p><h2>Obsidian Die</h2></div><span class="face-count">6 / 6</span></div>
+          <div id="faces" class="faces"></div>
+          <div class="divider"></div>
+          <div class="panel-heading"><div><p class="eyebrow">ACTIVE BOND</p><h2 id="bondTitle">Blood Oath</h2></div><span class="bond-dot"></span></div>
+          <p id="bondText" class="bond-text">Vampirism restores <b>1 HP</b> after every Attack.</p>
+        </aside>
+      </section>
+
+      <footer><span>ROLL · ADAPT · DESCEND</span><span>THE VEIL IS THIN</span></footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
